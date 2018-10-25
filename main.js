@@ -1,7 +1,6 @@
 async function getRestarauntPages() {
   let allRestaraunts = []
   let sidebar = document.getElementById('sidebar');  
-  console.log(sidebar.innerHTML)
   fetch('http://localhost:8080/all.json')
     .then(function (response) {
       return response.json();
