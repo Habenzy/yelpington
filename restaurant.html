@@ -133,68 +133,35 @@
 
   </section>
   <script>
-    let myMap = L.map('map').setView([44.4757769, -73.2127874], 17);
+    /*let myMap = L.map('map').setView([44.4757769, -73.2127874], 17);
     L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
       subdomains: 'abcd',
       maxZoom: 19
     }).addTo(myMap);
 
-    let ahliBabasMarker = L.marker([44.4757769, -73.2127874], { title: "Ahli Baba's Kabob Shop" }).addTo(myMap);
-    ahliBabasMarker.url = 'index.html#Ahli+Babas+Kabob'
-    ahliBabasMarker.on('click', function () {
-      window.location = (this.url);
-    });
-    let flatbreadMarker = L.marker([44.47655925, -73.2143528524479], { title: "American Flatbread" }).addTo(myMap);
-    flatbreadMarker.url = 'index.html#American+Flatbread'
-    flatbreadMarker.on('click', function () {
-      window.location = (this.url);
-    });
-    let augustFirstMarker = L.marker([44.47555355, -73.2172979341837], { title: "August First" }).addTo(myMap);
-    augustFirstMarker.url = 'index.html#August+First'
-    augustFirstMarker.on('click', function () {
-      window.location = (this.url);
-    });
-    let cityMarketMarker = L.marker([44.478, -73.2107], { title: "City Market" }).addTo(myMap);
-    cityMarketMarker.url = 'index.html#City+Market'
-    cityMarketMarker.on('click', function () {
-      window.location = (this.url);
-    });
-    let elCortijoMarker = L.marker([44.4780302, -73.21200445], { title: "El Cortijo" }).addTo(myMap);
-    elCortijoMarker.url = 'index.html#El+Cortijo'
-    elCortijoMarker.on('click', function () {
-      window.location = (this.url);
-    });
-    let farmhouseGrillMarker = L.marker([44.4784159, -73.2133028618589], { title: "Farmhouse Grill" }).addTo(myMap);
-    farmhouseGrillMarker.url = 'index.html#Farmhouse+Grill'
-    farmhouseGrillMarker.on('click', function () {
-      window.location = (this.url);
-    });
-    let henOfTheWoodMarker = L.marker([44.4787, -73.21744], { title: "Hen Of The Wood" }).addTo(myMap);
-    henOfTheWoodMarker.url = 'index.html#Hen+Of+The+Wood'
-    henOfTheWoodMarker.on('click', function () {
-      window.location = (this.url);
-    });
-    let honeyRoadMarker = L.marker([44.4761088, -73.2123458], { title: "Honey Road" }).addTo(myMap);
-    honeyRoadMarker.url = 'index.html#Honey+Road'
-    honeyRoadMarker.on('click', function () {
-      window.location = (this.url);
-    });
-    let kountryKartMarker = L.marker([44.4757719, -73.2129392], { title: "Kountry Kart Deli" }).addTo(myMap);
-    kountryKartMarker.url = 'index.html#Kountry+Kart+Deli'
-    kountryKartMarker.on('click', function () {
-      window.location = (this.url);
-    });
-    let mrMikesMarker = L.marker([44.47614, -73.2112], { title: "Mr. Mike's Pizza" }).addTo(myMap);
-    mrMikesMarker.url = 'index.html#Mr+Mikes+Pizza'
-    mrMikesMarker.on('click', function () {
-      window.location = (this.url);
-    });
-    let pascoloRistoranteMarker = L.marker([44.47805, -73.21248], { title: "Pascolo Ristorante" }).addTo(myMap);
-    pascoloRistoranteMarker.url = 'index.html#Pascolo+Ristorante'
-    pascoloRistoranteMarker.on('click', function () {
-      window.location = (this.url);
-    });
+    let fileArray = [];
+    let restaurantArray = [];
+    fetch('http://localhost:8080/all.json')
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (ids) {
+        ids.forEach(id => {
+          fileArray.push(id);
+        });
+
+        for (jsonFile of fileArray) {
+          fetch(`http://localhost:8080/${jsonFile}.json`)
+            .then(function (fileResponse) {
+              return fileResponse.json();
+            })
+            .then(function (currentArray) {
+              let currentVar = L.marker([currentArray.lat, currentArray.long], { title: `${currentArray.name}`, icon: greenIcon }).addTo(myMap);
+              currentVar.url = `restaurant.html#${currentArray.id}`
+              currentVar.on('click', function () {
+                window.location = (this.url);
+              });*/
 
     window.onload = populateRestaurantPage();
   </script>
