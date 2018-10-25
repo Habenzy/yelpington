@@ -23,7 +23,7 @@ a:hover {
   border-radius: 20px;
 }
 
-.sidebar {
+#sidebar {
   background-image: linear-gradient(rgb(171, 206, 178), rgb(155, 231, 140));
   flex: 1;
   padding-left: 0;
