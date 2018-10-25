@@ -1,28 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Yelpington</title>
-  <style>
-      #map {
-        height: 500px;
-        width: 500px;
-      }
-    </style>
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="main.js"></script>
 </head>
+
 <body>
 
-  <div class="header"></div>
-  <div class="sidebar"></div>
-  <div id="map"></div>
+  <div class="header"><div>YELPington <strong>!</strong></div></div>
+  <div id="container">
+    <div class="sidebar">&nbsp;</div>
+    <div id="map"></div>
+  </div>
+
+  <section id="footer">
+    <div class="section-title centered">
+      QUESTIONS OR COMMENTS? <strong>GET IN TOUCH:</strong>
+    </div>
+    <div class="flex-row">
+      <div class="contact-form">
+        <form action="https://google.com/search" method="get">
+          <input type="hidden" name="sitesearch" value="http://burlingtoncodeacademy.com" />
+          <div class="form-top">
+            <span class="left-span">
+              <input type="text" name="q" id="name" placeholder="Name">
+            </span>
+            <span class="right-span">
+              <input type="email" id="email" placeholder="Email">
+            </span>
+          </div>
+          <div>
+            <textarea placeholder="Message" rows="9" maxlength="400" wrap="hard"></textarea>
+          </div>
+          <div>
+            <button class="big-fancy-button">
+              &#x2709;&nbsp; SEND MESSAGE
+            </button>
+        </form>
+      </div>
+
+      </form>
+    </div>
+    <div class="contact-links">
+      <div class="just-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, dolor adipisci.
+      </div>
+      <div class="flex-row">
+        <div class="contact-left">
+          <div class="flex-row">
+            <span class="left-link-span">
+              <a href="https://www.google.com/maps/search/1234+somewhere+blvd+05402" class="fa fa-home"></a>
+            </span>
+            <span class="right-link-span">
+              <a href="https://www.google.com/maps/search/1234+somewhere+blvd+05402">1234 Somewhere Blvd
+                <br>
+                Burlington, VT</a>
+            </span>
+          </div>
+          <div class="flex-row">
+            <span class="left-link-span">
+              <a href="tel:5555555555" class="fa fa-phone"></a>
+            </span>
+            <span class="right-link-span">
+              <a href="tel:5555555555">
+                (802)555-5555</a>
+            </span>
+          </div>
+          <div class="flex-row">
+            <span class="left-link-span">
+              <a href="mailto:email@example.com" class="fa fa-envelope"></a>
+            </span>
+            <span class="right-link-span">
+              <a href="mailto:email@example.com">
+                email@example.com</a>
+            </span>
+          </div>
+        </div>
+        <div class="contact-right">
+          <div class="flex-row">
+            <span class="left-link-span">
+              <a href="https://twitter.com/burlington_vt?lang=en" class="fa fa-twitter"></a>
+            </span>
+            <span class="right-link-span">
+              <a href="https://twitter.com/burlington_vt?lang=en">
+                @user</a>
+            </span>
+          </div>
+          <div class="flex-row">
+            <span class="left-link-span">
+              <a href="https://www.instagram.com/explore/locations/216107348/burlington-vermont/" class="fa fa-instagram"></a>
+            </span>
+            <span class="right-link-span">
+              <a href="https://www.instagram.com/explore/locations/216107348/burlington-vermont/">
+                instagram</a>
+            </span>
+          </div>
+          <div class="flex-row">
+            <span class="left-link-span">
+              <a href="https://dribbble.com/tags/burlington" class="fa fa-dribbble"></a>
+            </span>
+            <span class="right-link-span">
+              <a href="https://dribbble.com/tags/burlington">
+                dribble</a>
+            </span>
+          </div>
+          <div class="flex-row">
+            <span class="left-link-span">
+              <a href="https://www.facebook.com/BTVParks/" class="fa fa-facebook"></a>
+            </span>
+            <span class="right-link-span">
+              <a href="https://www.facebook.com/BTVParks/">
+                facebook</a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+  </section>
+
   <script>
     let myMap = L.map('map').setView([44.475, -73.212], 13);
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
-}).addTo(myMap);
-const ahliBabasMarker = L.marker([44.475, -73.201]).addTo(myMap);
+      attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+    }).addTo(myMap);
+    const ahliBabasMarker = L.marker([44.475, -73.201]).addTo(myMap);
   </script>
 </body>
+
 </html>
