@@ -35,8 +35,19 @@
     const augustFirstMarker = L.marker([44.475, -73.217]).addTo(myMap);
     const cityMarketMarker = L.marker([44.478, -73.210]).addTo(myMap);
 
-    function populateSidebar() {
+    function getIds() {
       const sidebar = document.getElementById('sidebar');
+      allIds = []
+      await fetch('all.json')
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(ids){
+        ids.forEach(id => {
+          allIds.push(id)
+        });
+      })
+      
     };
   </script>
 </body>
