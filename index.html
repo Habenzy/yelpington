@@ -1,18 +1,28 @@
-<script>
-let name = document.location.pathname.slice(1);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Yelpington</title>
+  <style>
+      #map {
+        height: 500px;
+        width: 500px;
+      }
+    </style>
+</head>
+<body>
 
-if (!name) {
-  console.log("no place name specfied");
-} else {
-  console.log("fetching place named '" + name + "'");
-
-  fetch(name + '.json')
-    .then(function (response) {
-      return response.text();
-    })
-    .then(function (myText) {
-      console.log(myText);
-    });
-}
-
-</script>
+  <div class="header"></div>
+  <div class="sidebar"></div>
+  <div id="map"></div>
+  <script>
+    let myMap = L.map('map').setView([44.475, -73.212], 13);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+}).addTo(myMap);
+const ahliBabasMarker = L.marker([44.475, -73.201]).addTo(myMap);
+  </script>
+</body>
+</html>
