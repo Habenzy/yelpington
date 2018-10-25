@@ -133,7 +133,7 @@
 
   </section>
   <script>
-    let myMap = L.map('map').setView([restaraunt.lat, restaraunt.long], 17);
+    let myMap = L.map('map').setView([44.4757769, -73.2127874], 17);
     L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
       subdomains: 'abcd',
@@ -196,7 +196,7 @@
       window.location = (this.url);
     });
 
-    window.onload = populateRestaurantPage(restaraunt.id);
+    window.onload = populateRestaurantPage();
   </script>
 
 </body>
