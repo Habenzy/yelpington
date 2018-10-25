@@ -1,11 +1,13 @@
 {
   "id": "el-cortijo",
-  "name": "El Corijo Taqueria",
+  "name": "El Cortijo Taqueria",
   "address": "189 Bank St. Burlington, VT 05401",
   "phone": "497-1668",
   "website": "http://www.cortijovt.com",
+  "lat": "44.4780302",
+  "long": "-73.21200445",
   "notes": [
     "A member of the Farmhouse group.",
-    "Over 25 varieties of Tequila"     
+    "Over 25 varieties of Tequila"
   ]
 }
