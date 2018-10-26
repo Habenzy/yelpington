@@ -168,12 +168,16 @@
               return fileResponse.json();
             })
             .then(function (currentArray) {
-              let currentVar = L.marker([currentArray.lat, currentArray.long], { title: `${currentArray.name}`, icon: greenIcon }).addTo(myMap);
-              currentVar.url = `restaurant.html#${currentArray.id}`
-              currentVar.on('click', function () {
+              let marker = L.marker([currentArray.lat, currentArray.long], { title: `${currentArray.name}`, icon: greenIcon }).addTo(myMap);
+              let extra = 0.00027;
+              let popup = L.popup()
+                .setLatLng([+currentArray.lat + extra, +currentArray.long])
+                .setContent(currentArray.name)
+                .addTo(myMap);
+              marker.url = `restaurant.html#${currentArray.id}`
+              marker.on('click', function () {
                 window.location = (this.url);
               });
-
             })
         }
       })
