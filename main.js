@@ -1,6 +1,6 @@
 async function getRestarauntPages() {
   let allRestaraunts = []
-  let sidebar = document.getElementById('sidebar');  
+  let sidebar = document.getElementById('sidebar');
   fetch('http://localhost:8080/all.json')
     .then(function (response) {
       return response.json();
@@ -37,21 +37,25 @@ function populateRestaurantPage() {
     shadowSize: [41, 41]
   });
   fetch(`http://localhost:8080/${currentRestaurant}`)
-  .then((response) => {
-    return response.json()
-  })
-  .then((thisJson) => {
-    sidebar.innerHTML += `<br><div class="sidebar-title"><b>${thisJson.name}<b></div><br><br>${thisJson.phone}<br><br>${thisJson.address}<br><br>${thisJson.website}<br><br>${thisJson.notes}`;
-    return thisJson
-  })
-  .then((thisJson) => {
-    let myMap = L.map('map').setView([thisJson.lat, thisJson.long], 19);
-    L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-      subdomains: 'abcd',
-      maxZoom: 19
-    }).addTo(myMap);
-    L.marker([thisJson.lat,thisJson.long], { title: `${thisJson.name}`, icon: greenIcon }).addTo(myMap).bindPopup(thisJson.name + '<br>' + thisJson.address)
-    return thisJson;
-  })
+    .then((response) => {
+      return response.json()
+    })
+    .then((thisJson) => {
+      thisJson.notes = thisJson.notes.join('<br><br>');
+      return thisJson
+    })
+    .then((thisJson) => {
+      sidebar.innerHTML += `<br><div class="sidebar-title"><b>${thisJson.name}<b></div><br><br>${thisJson.phone}<br><br>${thisJson.address}<br><br>${thisJson.website}<br><br>${thisJson.notes}`;
+      return thisJson
+    })
+    .then((thisJson) => {
+      let myMap = L.map('map').setView([thisJson.lat, thisJson.long], 19);
+      L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+      }).addTo(myMap);
+      L.marker([thisJson.lat, thisJson.long], { title: `${thisJson.name}`, icon: greenIcon }).addTo(myMap).bindPopup(thisJson.name + '<br>' + thisJson.address)
+      return thisJson;
+    })
 }
