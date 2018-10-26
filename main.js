@@ -41,6 +41,10 @@ function populateRestaurantPage() {
       return response.json()
     })
     .then((thisJson) => {
+      thisJson.notes = thisJson.notes.join('<br><br>');
+      return thisJson
+    })
+    .then((thisJson) => {
       sidebar.innerHTML += `<br><div class="sidebar-title"><b>${thisJson.name}<b></div><br><br>${thisJson.phone}<br><br>${thisJson.address}<br><br>${thisJson.website}<br><br>${thisJson.notes}`;
       return thisJson
     })

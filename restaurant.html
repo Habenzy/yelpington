@@ -139,36 +139,6 @@
 
   </section>
   <script>
-    /*let myMap = L.map('map').setView([44.4757769, -73.2127874], 17);
-    L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-      subdomains: 'abcd',
-      maxZoom: 19
-    }).addTo(myMap);
-
-    let fileArray = [];
-    let restaurantArray = [];
-    fetch('http://localhost:8080/all.json')
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (ids) {
-        ids.forEach(id => {
-          fileArray.push(id);
-        });
-
-        for (jsonFile of fileArray) {
-          fetch(`http://localhost:8080/${jsonFile}.json`)
-            .then(function (fileResponse) {
-              return fileResponse.json();
-            })
-            .then(function (currentArray) {
-              let currentVar = L.marker([currentArray.lat, currentArray.long], { title: `${currentArray.name}`, icon: greenIcon }).addTo(myMap);
-              currentVar.url = `restaurant.html#${currentArray.id}`
-              currentVar.on('click', function () {
-                window.location = (this.url);
-              });*/
-
     window.onload = populateRestaurantPage();
   </script>
 
