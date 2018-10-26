@@ -28,6 +28,14 @@ function populateRestaurantPage() {
   let restaurantId = path.split('#')[1];
   let currentRestaurant = restaurantId + '.json';
   let sidebar = document.getElementById('sidebar');
+  let greenIcon = new L.Icon({
+    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
   fetch(`http://localhost:8080/${currentRestaurant}`)
   .then((response) => {
     return response.json()
@@ -43,7 +51,7 @@ function populateRestaurantPage() {
       subdomains: 'abcd',
       maxZoom: 19
     }).addTo(myMap);
-    L.marker([thisJson.lat,thisJson.long]).addTo(myMap)
+    L.marker([thisJson.lat,thisJson.long], { title: `${thisJson.name}`, icon: greenIcon }).addTo(myMap).bindPopup(thisJson.name + '<br>' + thisJson.address)
     return thisJson;
   })
 }
