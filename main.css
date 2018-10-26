@@ -50,17 +50,37 @@ text-decoration: underline;
 
 #sidebar a:hover {
   text-decoration: underline;
+  opacity: 0.5;
 }
 
 .sidebar-title {
   text-decoration: underline;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
 }
 
+ul {
+  list-style-type: none;
+  padding: 3px;
+}
+
+li {
+  padding: 8px;
+}
+
+.line {
+  height: 1px;
+  width: 50%;
+  border-top: 1px dotted rgb(121, 207, 121);
+  border-bottom: 1px dotted rgb(121, 207, 121);
+  margin: 3px 0 3px 0;
+}
 
 #comments-wrapper {
   background-image: linear-gradient(rgb(209, 236, 215), rgb(199, 255, 188));
   flex: 1;
-  padding: 10px;
+  padding: 0 12px 12px 12px;
   border: 0px solid black;
   border-radius: 10px;
   font-family: 'Questrial', serif;
@@ -80,7 +100,7 @@ text-decoration: underline;
 
 #comments {
   text-align: left;
-  padding: 4px 0 0 0;
+  padding: 6px 0 0 0;
 }
 
 #comment-list {
@@ -94,7 +114,7 @@ text-decoration: underline;
 .comment-title {
   font-weight: bold;
   color: rgb(0, 114, 0);
-  margin: 9px 0 0 0;
+  margin: 7px 0 0 0;
 }
 
 .comment-body {
@@ -107,7 +127,16 @@ text-decoration: underline;
 }
 
 #map {
-  height: 500px;
+  height: auto;
+  min-height: 500px;
+}
+
+#single-map {
+  height: auto;
+  min-height: 360px;
+}
+
+#map, #single-map {
   width: 500px;
   flex: 4;
   margin: 0 0 0 10px;

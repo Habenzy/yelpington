@@ -45,11 +45,16 @@ function populateRestaurantPage() {
       return thisJson
     })
     .then((thisJson) => {
-      sidebar.innerHTML += `<br><div class="sidebar-title"><b>${thisJson.name}<b></div><br><br>${thisJson.phone}<br><br>${thisJson.address}<br><br>${thisJson.website}<br><br>${thisJson.notes}`;
+      function phone() {
+        if (thisJson.phone.slice(0,3).includes(802)) {
+          return thisJson.phone;
+        } else return '802' + thisJson.phone;
+      }
+      sidebar.innerHTML += `<br><div class="sidebar-title"><a href="${thisJson.website}">${thisJson.name}</a></div><ul><li>${thisJson.notes}</li><li><a href="tel:${phone()}">${thisJson.phone}</a></li><li><a href="https://www.google.com/maps/dir/182+Main+St,+Burlington,+VT/${thisJson.name.split(' ').join('+')}">${thisJson.address}</a></li></ul>`;
       return thisJson
     })
     .then((thisJson) => {
-      let myMap = L.map('map').setView([thisJson.lat, thisJson.long], 19);
+      let myMap = L.map('single-map').setView([thisJson.lat, thisJson.long], 18);
       L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
         subdomains: 'abcd',
@@ -67,7 +72,7 @@ function populateRestaurantPage() {
       document.getElementById('comment-list').innerHTML = '';
         console.log(myJson[restaurantId]);
         for (let property of myJson[restaurantId]) {
-        document.getElementById('comment-list').innerHTML += `<div class="comment-email">A comment from <a href=#${restaurantId}>${property.email}</a>:</div><div class="comment-title">${property.name}</div><div class="comment-body">${property.body}</div>`;
+        document.getElementById('comment-list').innerHTML += `<div class="comment-email">A comment from <a href="mailto:BurlingtonCodeAcademy@example.com">${property.email}</a>:</div><div class="comment-title">${property.name}</div><div class="comment-body">${property.body}<br><div class="line">&nbsp;</div></div>`;
       }
     });
 }
