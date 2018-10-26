@@ -60,6 +60,43 @@ text-decoration: underline;
   text-align: center;
 }
 
+#restaurant {
+  padding: 10px 5px 0 0;
+  font-size: 18px;
+}
+
+#map {
+  height: auto;
+  width: auto;
+  min-height: 570px;
+}
+
+#single-map {
+  height: auto;
+  width: auto;
+  min-height: 360px;
+}
+
+#map, #single-map {
+  flex: 4;
+  margin: 0 0 0 10px;
+  padding-right: 10px;
+  border: 0px solid black;
+  border-radius: 10px;
+  min-width: 400px;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0 10px 0;
+  justify-content: space-between;
+  border: 0px solid black;
+  width: 100%;
+  margin: 0;
+  min-width: 620px;
+}
+
 ul {
   list-style-type: none;
   padding: 3px;
@@ -69,9 +106,17 @@ li {
   padding: 8px;
 }
 
+.dark-line {
+  height: 1px;
+  width: 82%;
+  border-top: 1px dotted rgb(68, 134, 68);
+  border-bottom: 1px dotted rgb(68, 134, 68);
+  margin: 3px 0 3px 0;
+}
+
 .line {
   height: 1px;
-  width: 50%;
+  width: 48%;
   border-top: 1px dotted rgb(121, 207, 121);
   border-bottom: 1px dotted rgb(121, 207, 121);
   margin: 3px 0 3px 0;
@@ -120,41 +165,6 @@ li {
 .comment-body {
   color: green;
   margin: 5px 0 22px 0;
-}
-
-.restaraunt {
-  padding-top: 7px;
-}
-
-#map {
-  height: auto;
-  min-height: 500px;
-}
-
-#single-map {
-  height: auto;
-  min-height: 360px;
-}
-
-#map, #single-map {
-  width: 500px;
-  flex: 4;
-  margin: 0 0 0 10px;
-  padding-right: 10px;
-  border: 0px solid black;
-  border-radius: 10px;
-  min-width: 400px;
-}
-
-#container {
-  display: flex;
-  flex-direction: row;
-  padding: 10px 0 10px 0;
-  justify-content: space-between;
-  border: 0px solid black;
-  width: 100%;
-  margin: 0;
-  min-width: 620px;
 }
 
 

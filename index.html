@@ -24,7 +24,7 @@
     </a>
   </div>
   <div id="container">
-    <div id="sidebar"><br>RESTAURANTS<br></div>
+    <div id="sidebar"><div id="restaurant">RESTAURANTS</div><div class="dark-line"></div></div>
     <div id="map"></div>
   </div>
 
@@ -144,7 +144,7 @@
       shadowSize: [41, 41]
     });
 
-    let myMap = L.map('map').setView([44.4773, -73.214], 17);
+    let myMap = L.map('map').setView([44.4773, -73.214], 16);
     L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
       subdomains: 'abcd',
@@ -170,7 +170,7 @@
             .then(function (currentArray) {
               let marker = L.marker([currentArray.lat, currentArray.long], { title: `${currentArray.name}`, icon: greenIcon })
                 .addTo(myMap);
-              let extra = 0.00027;
+              let extra = 0.0005;
               let popup = L.popup()
                 .setLatLng([+currentArray.lat + extra, +currentArray.long])
                 .setContent(currentArray.name)
