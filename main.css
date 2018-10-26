@@ -26,7 +26,7 @@ text-decoration: underline;
   background-color: rgb(5, 92, 5);
   background-image: url(bubble.svg);
   min-height: 112px;
-  min-width: 620px;
+  min-width: 650px;
   width: 100%;
   border: 0px solid black;
   border-radius: 20px;
@@ -40,7 +40,7 @@ text-decoration: underline;
   border-radius: 10px;
   font-family: 'Questrial', serif;
   color: rgb(27, 90, 50);
-  min-width: 180px;
+  min-width: 210px;
 }
 
 #sidebar a {
@@ -54,6 +54,52 @@ text-decoration: underline;
 
 .sidebar-title {
   text-decoration: underline;
+}
+
+
+#comments-wrapper {
+  background-image: linear-gradient(rgb(209, 236, 215), rgb(199, 255, 188));
+  flex: 1;
+  padding: 10px;
+  border: 0px solid black;
+  border-radius: 10px;
+  font-family: 'Questrial', serif;
+  color: rgb(27, 90, 50);
+  min-width: 630px;
+  margin: 0 0 10px 0;
+}
+
+#comments-wrapper a {
+  color: rgb(27, 90, 50);
+  font-weight: bold;
+}
+
+#comments-wrapper a:hover {
+  text-decoration: underline;
+}
+
+#comments {
+  text-align: left;
+  padding: 4px 0 0 0;
+}
+
+#comment-list {
+  text-align: left;
+}
+
+.comment-email {
+  color: rgb(0, 194, 81);
+}
+
+.comment-title {
+  font-weight: bold;
+  color: rgb(0, 114, 0);
+  margin: 9px 0 0 0;
+}
+
+.comment-body {
+  color: green;
+  margin: 5px 0 22px 0;
 }
 
 .restaraunt {
@@ -95,7 +141,7 @@ text-decoration: underline;
   width: 100%;
   font-family: 'Questrial', serif;
   border-radius: 10px;
-  min-width: 620px;
+  min-width: 650px;
 }
 
 .centered {
