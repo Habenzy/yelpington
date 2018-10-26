@@ -168,7 +168,8 @@
               return fileResponse.json();
             })
             .then(function (currentArray) {
-              let marker = L.marker([currentArray.lat, currentArray.long], { title: `${currentArray.name}`, icon: greenIcon }).addTo(myMap);
+              let marker = L.marker([currentArray.lat, currentArray.long], { title: `${currentArray.name}`, icon: greenIcon })
+              .addTo(myMap);
               let extra = 0.00027;
               let popup = L.popup()
                 .setLatLng([+currentArray.lat + extra, +currentArray.long])
