@@ -1,0 +1,11 @@
+{
+  "id": "single-pebble",
+  "name": "A Single Pebble",
+  "address": "112 Lake Street,<br>Burlington Vermont 05401",
+  "phone": "865-5200",
+  "website": "https://asinglepebble.com/",
+  "hours": "Sunday - Saturday: 5p.m. - close",
+  "lat": "44.4791201",
+  "long": "-73.2208896",
+  "notes": ["Great asian food, a bit on the pricey side, but worth it.", "Open for lunch on Fridays."]
+}
