@@ -24,12 +24,15 @@ text-decoration: underline;
   justify-content: center;
   text-align: center;
   background-color: rgb(5, 92, 5);
-  background-image: url(bubble.svg);
+  background-image: url(bubble.svg), url(littlebubble.svg), url(bubble.svg);
+  background-position-x: 3%, 47.5%, 96%;
+  background-repeat: no-repeat;
   min-height: 112px;
   min-width: 650px;
   width: 100%;
   border: 0px solid black;
   border-radius: 20px;
+  font-family: 'Acme', sans-serif;
 }
 
 #sidebar {
