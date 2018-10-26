@@ -50,7 +50,7 @@ function populateRestaurantPage() {
           return thisJson.phone;
         } else return '802' + thisJson.phone;
       }
-      sidebar.innerHTML += `<br><div class="sidebar-title"><a href="${thisJson.website}">${thisJson.name}</a></div><ul><li>${thisJson.notes}</li><li><a href="tel:${phone()}">${thisJson.phone}</a></li><li><a href="https://www.google.com/maps/dir/182+Main+St,+Burlington,+VT/${thisJson.name.split(' ').join('+')}">${thisJson.address}</a></li></ul>`;
+      sidebar.innerHTML += `<br><div class="sidebar-title"><a href="${thisJson.website}">${thisJson.name}</a></div><ul><li>${marked(thisJson.notes)}</li><li><a href="tel:${phone()}">${thisJson.phone}</a></li><li><a href="https://www.google.com/maps/dir/182+Main+St,+Burlington,+VT/${thisJson.name.split(' ').join('+')}">${thisJson.address}</a></li></ul>`;
       return thisJson
     })
     .then((thisJson) => {
