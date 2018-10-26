@@ -43,7 +43,7 @@ function populateRestaurantPage() {
       subdomains: 'abcd',
       maxZoom: 19
     }).addTo(myMap);
-    L.marker([thisJson.lat,thisJson.long]).addTo(myMap)
+    L.marker([thisJson.lat,thisJson.long]).addTo(myMap).bindPopup(thisJson.name + '<br>' + thisJson.address)
     return thisJson;
   })
 }
