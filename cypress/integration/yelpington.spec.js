@@ -33,5 +33,10 @@ describe('Cypress', function () {
     cy.get('#mr-mikes a')
     .should('have', 'restaurant.html#mr-mikes')
   });
+  it('shows formatted notes using markdown', function () {
+    cy.visit('/restaurant.html#mr-mikes');
+    cy.get('#sidebar ul li').first()
+    .should('have.html', '<p>The <strong>greatest</strong> pizza around! call 864-0072 or order online for free delivery!</p>\n' )
+  });
 });
 
